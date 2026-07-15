@@ -53,7 +53,7 @@ BuildWise-AI/
 ### Clone
 
 ```bash
-git clone https://github.com/yourusername/buildwise-ai.git
+git clone https://github.com/kavinilaM02/buildwise-ai.git
 ```
 
 ### Frontend
