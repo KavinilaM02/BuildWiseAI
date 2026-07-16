@@ -6,7 +6,35 @@ const aiRoutes = require("./routes/aiRoutes");
 
 const app = express();
 
-app.use(cors());
+const express = require("express");
+const cors = require("cors");
+
+const aiRoutes = require("./routes/aiRoutes");
+
+const app = express();
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://build-wise-ai-two.vercel.app"
+  ],
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("BuildWiseAI Backend Running");
+});
+
+app.use("/api", aiRoutes);
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 app.use(express.json());
 
 // Home Route
