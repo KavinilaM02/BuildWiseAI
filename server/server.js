@@ -13,15 +13,18 @@ const aiRoutes = require("./routes/aiRoutes");
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://build-wise-ai-two.vercel.app"
-  ],
-  methods: ["GET", "POST"],
-  credentials: true,
-}));
+const cors = require("cors");
 
+app.use(
+  cors({
+    origin: [
+      "https://build-wise-ai-two.vercel.app",
+      "http://localhost:5173",
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
