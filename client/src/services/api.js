@@ -4,7 +4,7 @@ const api = axios.create({
   baseURL:
     import.meta.env.MODE === "development"
       ? "http://localhost:5000/api"
-      : "https://buildwiseai-vura.onrender.com/api",
+      : "https://buildwiseai-xlr6.onrender.com/api",
 });
 
 export default api;
